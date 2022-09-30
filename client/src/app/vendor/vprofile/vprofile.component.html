@@ -1,0 +1,22 @@
+<app-nav>
+
+</app-nav>
+
+<div class="row card">
+  <div class="myimg"></div>
+  <h3 style="font-weight:600;">{{profile?.NAME._text}}</h3>
+  <div  style="margin: 10px 0;">
+ <p>City : {{profile?.CITY._text}}</p>
+ <p>Country: {{profile?.COUNTRY._text}}</p>
+ <p>Region : {{profile?.REGION._text}}</p>
+ <p>Ph : {{profile?.TELEPHONE._text}}</p>
+ <p>Address : {{profile?.STREET._text}}</p>
+  </div>
+  <h3 style="font-weight:600">Account Details</h3>
+  <div  style="margin: 10px 0;">
+    <p>Account Number : {{bankdata?.BANK_ACCT._text}}</p>
+    <p>IFSC Code: {{bankdata?.BANK_KEY._text}}</p>
+    <p>Account Holder Name : {{bankdata?.VENDOR._text}}</p>
+</div>
+</div>
+<app-footerc></app-footerc>

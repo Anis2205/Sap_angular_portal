@@ -1,0 +1,59 @@
+.example-card {
+  height: fit-content;
+  width: 350px;
+  margin: 0 20px;
+  background-color: #f9f9fa;
+}
+mat-card-title{
+  color: #5f687b
+}
+p{
+  line-height: 24px;
+  font-size: 14px;
+}
+.btn {
+  background-color: #475ac3;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+  font-size: larger;
+  width: 100%;
+}
+.row {
+  justify-content: center;
+}
+.portalcontent {
+  margin: 2%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 550;
+  line-height: 56px;
+  color: #475ac3;
+  margin-top:12%
+}
+h2 {
+  color: #858ea1;
+  margin: 10px 0 30px 0;
+  font-size: 24px;
+}
+img{
+  width: 80%;
+  height:400px;
+  margin: 0% 10%;
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+.container{
+  margin-top: 3%;
+}

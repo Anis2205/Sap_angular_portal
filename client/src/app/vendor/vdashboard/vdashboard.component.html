@@ -1,0 +1,40 @@
+<app-vnav></app-vnav>
+<div class="container-fluid mycarousel">
+  <h1>Vendor Related Data</h1><hr>
+
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let image of images;let i = index">
+      <div class="row">
+        <div class="col wrapper">
+          <!-- <img [src]="image.src1" alt="Random first slide" /> -->
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" [src]="image.src1" alt="Card image cap" (click)="onroute(i)">
+            <div class="card-body">
+              <h3 class="card-title">{{image.title1}}</h3>
+              <p class="card-text">{{image.detail1}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col wrapper">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" [src]="image.src2" alt="Card image cap" (click)="onroute1(i)">
+            <div class="card-body">
+              <h3 class="card-title">{{image.title2}}</h3>
+              <p class="card-text">{{image.detail2}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col wrapper">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" [src]="image.src3" alt="Card image cap" (click)="onroute2(i)">
+            <div class="card-body">
+              <h3 class="card-title">{{image.title3}}</h3>
+              <p class="card-text">{{image.detail3}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+<app-footerc></app-footerc>

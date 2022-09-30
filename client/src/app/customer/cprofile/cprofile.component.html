@@ -1,0 +1,73 @@
+<div *ngIf="parent">
+  <app-cnav></app-cnav>
+  <div class="portalcontent">
+    <h1 style="margin-top:10px">Customer Portal</h1>
+    <hr />
+    <p>
+      The objective of the customer portal is to understand the functionalities
+      of Sales and Distribution (SD) and Finance (FI) module. This portal is to
+      be designed for maintaining the data of all the customers carrying out
+      business with the organization. The need of Customer portal is to access
+      and view the complete transaction between the company and customer.
+    </p>
+  </div>
+  <div class="row">
+    <div class="card" style="width: 18rem">
+      <div class="myimg myimg1"></div>
+      <div class="card-body">
+        <button type="button" class="btn" (click)="oninquirylist()">
+          Inquiry Data
+        </button>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem">
+      <div class="myimg myimg3"></div>
+      <div class="card-body">
+        <button type="button" class="btn" (click)="ondeliverylist()">
+          Delivery Data
+        </button>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem">
+      <div class="myimg myimg4"></div>
+      <div class="card-body">
+        <button type="button" class="btn" (click)="onsalesorderlist()">
+          Salesorder Data
+        </button>
+      </div>
+    </div>
+  </div>
+  <h1 style="margin-top:10px">Customer Financial Sheet</h1>
+    <hr />
+    <div class="row">
+      <div class="card" style="width: 18rem">
+        <div class="myimg myimg2"></div>
+
+        <div class="card-body" (click)="oninvoicelist()">
+          <button type="button" class="btn" (click)="oninvoicelist()">
+            Invoice Data
+          </button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <div class="myimg myimg5"></div>
+        <div class="card-body">
+          <button type="button" class="btn" (click)="oncreditmemo()">
+            Credit/Debit memo
+          </button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <div class="myimg myimg6"></div>
+        <div class="card-body">
+          <button type="button" class="btn" (click)="onpaymentlist()">
+            Payment Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  <app-footerc></app-footerc>
+</div>
+<router-outlet></router-outlet>

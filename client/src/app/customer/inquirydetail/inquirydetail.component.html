@@ -1,0 +1,26 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <h3>Inquiry Details for {{id}}</h3>
+  <ul class="list-group">
+    <li class="list-group-item">DOC ID : {{inquirydetailsdata?.VBELN?._text}}</li>
+    <li class="list-group-item">CLIENT : {{inquirydetailsdata?.MANDT?._text}}</li>
+    <li class="list-group-item">MATERIAL NUMBER : {{inquirydetailsdata?.MATNR?._text}}</li>
+    <li class="list-group-item">SALES DOC ITEM : {{inquirydetailsdata?.POSNR?._text}}</li>
+    <li class="list-group-item">MATERIAL ENTERED : {{inquirydetailsdata?.MATWA?._text}}</li>
+    <li class="list-group-item">DESCRIPTION FOR SALES ORDER: {{inquirydetailsdata?.ARKTX?._text}}</li>
+    <li class="list-group-item">ITEM CATEGORY : {{inquirydetailsdata?.PSTYV?._text}}</li>
+    <li class="list-group-item">TARGET QUANTITY : {{inquirydetailsdata?.ZIEME?._text}}</li>
+    <li class="list-group-item">SALES UNIT TO BASE UNIT : {{inquirydetailsdata?.UMZIZ?._text}}</li>
+    <li class="list-group-item">UMZIN : {{inquirydetailsdata?.UMZIN?._text}}</li>
+    <li class="list-group-item">UNIT OF MEASURE : {{inquirydetailsdata?.MEINS?._text}}</li>
+    <li class="list-group-item">SCALE QUNATITY : {{inquirydetailsdata?.SMENG?._text}}</li>
+    <li class="list-group-item">UNLIMITED OVER DELIVERY {{inquirydetailsdata?.UEBTK?._text}}</li>
+    <li class="list-group-item">DIVISION : {{inquirydetailsdata?.SPART?._text}}</li>
+    <li class="list-group-item">BUSINESS AREA : {{inquirydetailsdata?.GSBER?._text}}</li>
+    <li class="list-group-item">NET VALUE : {{inquirydetailsdata?.NETWR?._text}}</li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button></button>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Close</button>
+</div>

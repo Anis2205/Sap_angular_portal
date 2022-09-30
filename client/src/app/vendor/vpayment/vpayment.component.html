@@ -1,0 +1,83 @@
+<app-vnav></app-vnav>
+<div class="container">
+  <h1>PAYMENT DATA </h1>
+</div>
+<div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="COMP_CODE">
+      <th mat-header-cell *matHeaderCellDef> COMPANY CODE </th>
+      <td mat-cell *matCellDef="let element"> {{element.COMP_CODE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="VENDOR">
+      <th mat-header-cell *matHeaderCellDef>VENDOR</th>
+      <td mat-cell *matCellDef="let element"> {{element.VENDOR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FISC_YEAR">
+      <th mat-header-cell *matHeaderCellDef> FISCAL YEAR </th>
+      <td mat-cell *matCellDef="let element"> {{element.FISC_YEAR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DOC_NO">
+      <th mat-header-cell *matHeaderCellDef>DOC NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_NO._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ITEM_NUM">
+      <th mat-header-cell *matHeaderCellDef>ITEM NUM</th>
+      <td mat-cell *matCellDef="let element"> {{element.ITEM_NUM._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ENTRY_DATE">
+      <th mat-header-cell *matHeaderCellDef>ENTRY DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_DATE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CURRENCY">
+      <th mat-header-cell *matHeaderCellDef>CURRENCY</th>
+      <td mat-cell *matCellDef="let element"> {{element.CURRENCY._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="POST_KEY">
+      <th mat-header-cell *matHeaderCellDef>POSTING KEY </th>
+      <td mat-cell *matCellDef="let element"> {{element.POST_KEY._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="LC_AMOUNT">
+      <th mat-header-cell *matHeaderCellDef>LOCAL CURRENCY AMOUNT </th>
+      <td mat-cell *matCellDef="let element"> {{element.LC_AMOUNT._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="AMT_DOCCUR">
+      <th mat-header-cell *matHeaderCellDef>AMOUNT DOC CURRENCY</th>
+      <td mat-cell *matCellDef="let element"> {{element.AMT_DOCCUR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BLINE_DATE">
+      <th mat-header-cell *matHeaderCellDef>BILLING DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.BLINE_DATE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="AGING">
+      <th mat-header-cell *matHeaderCellDef>AGING </th>
+      <td mat-cell *matCellDef="let element"> {{element.AGING}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="STATUS">
+      <th mat-header-cell *matHeaderCellDef>STATUS </th>
+      <td mat-cell *matCellDef="let element"> {{element.STATUS}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+
+
+<app-footerc></app-footerc>

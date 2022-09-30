@@ -1,0 +1,103 @@
+
+<!-- <app-nav></app-nav>
+<div class="mybody">
+  <table>
+    <tr>
+      <th>VBELN</th>
+      <th>FKART</th>
+      <th>FKTYP</th>
+      <th>VBTYP</th>
+      <th>VTWEG</th>
+      <th>WAERK</th>
+      <th>FKDAT</th>
+      <th>BZIRK</th>
+      <th>ERDAT</th>
+      <th>KDGRP</th>
+      <th>STWAE</th>
+      <th>ERNAM</th>
+      <th>NETWR</th>
+    </tr>
+    <tr *ngFor= "let listitem of invoicelistarray; let i = index">
+      <td>{{ listitem.VBELN }}</td>
+      <td>{{ listitem.FKART }}</td>
+      <td>{{ listitem.FKTYP }}</td>
+      <td>{{ listitem.VBTYP}}</td>
+      <td>{{ listitem.VTWEG}}</td>
+      <td>{{ listitem.WAERK }}</td>
+      <td>{{ listitem.FKDAT}}</td>
+      <td>{{ listitem.BZIRK}}</td>
+      <td>{{ listitem.ERDAT }}</td>
+      <td>{{ listitem.KDGRP}}</td>
+      <td>{{ listitem.STWAE }}</td>
+      <td>{{ listitem.ERNAM}}</td>
+      <td>{{ listitem.NETWR}}</td>
+    </tr>
+  </table>
+</div>
+<app-footerc></app-footerc> -->
+<app-cnav></app-cnav>
+<div class="container" style="display: flex;">
+  <div style="flex:1">
+    <h1>Invoice Data List </h1>
+  </div>
+  <div style="flex:right">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target)" placeholder="Search By DOC No">
+    </mat-form-field>
+  </div>
+
+</div>
+
+<div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="VBELN">
+      <th mat-header-cell *matHeaderCellDef>DOC NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.VBELN._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FKART">
+      <th mat-header-cell *matHeaderCellDef>BILLING TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.FKART._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="FKTYP">
+      <th mat-header-cell *matHeaderCellDef>BILLING CATEGORY</th>
+      <td mat-cell *matCellDef="let element"> {{element.FKTYP._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VBTYP">
+      <th mat-header-cell *matHeaderCellDef>DOC CATEGORY</th>
+      <td mat-cell *matCellDef="let element"> {{element.VBTYP._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VTWEG">
+      <th mat-header-cell *matHeaderCellDef>DISTRIBUTION CHANNEL</th>
+      <td mat-cell *matCellDef="let element"> {{element.VTWEG._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="STWAE">
+      <th mat-header-cell *matHeaderCellDef>STATISTICS CURRENCY </th>
+      <td mat-cell *matCellDef="let element"> {{element.STWAE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="WAERK">
+      <th mat-header-cell *matHeaderCellDef>DOC CURRENCY</th>
+      <td mat-cell *matCellDef="let element"> {{element.WAERK._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="Ondetail(row)"></tr>
+  </table>
+
+</div>
+<app-invoicedetail *ngIf="detailshow"></app-invoicedetail>
+
+<app-footerc></app-footerc>

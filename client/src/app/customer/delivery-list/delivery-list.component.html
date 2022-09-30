@@ -1,0 +1,93 @@
+<app-cnav></app-cnav>
+<!-- <div>
+  <table>
+    <tr>
+      <th>VBELN</th>
+      <th>VKORG</th>
+      <th>LFUHR</th>
+      <th>LFDAT_V</th>
+      <th>LFART</th>
+      <th>INCO2</th>
+      <th>ERZET</th>
+      <th>ARKTX</th>
+      <th>ERDAT</th>
+    </tr>
+    <tr *ngFor="let listitem of deliverylistarray; let i = index">
+      <td>{{ listitem.VBELN }}</td>
+      <td>{{ listitem.VKORG }}</td>
+      <td>{{ listitem.LFUHR }}</td>
+      <td>{{ listitem.LFDAT_V }}</td>
+      <td>{{ listitem.LFART }}</td>
+      <td>{{ listitem.INCO2 }}</td>
+      <td>{{ listitem.ERZET }}</td>
+      <td>{{ listitem.ARKTX }}</td>
+      <td>{{ listitem.ERDAT }}</td>
+    </tr>
+  </table>
+</div>
+<app-footerc></app-footerc> -->
+<div class="container" style="display: flex;">
+  <div style="flex:1">
+    <h1>Delivery Data List </h1>
+  </div>
+  <div style="flex:right">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target)" placeholder="Search By DOC No">
+    </mat-form-field>
+  </div>
+
+</div>
+
+
+<div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl >
+
+
+    <ng-container matColumnDef="VBELN">
+      <th mat-header-cell *matHeaderCellDef>DOC NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.VBELN._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="VKORG ">
+      <th mat-header-cell *matHeaderCellDef>SALES ORG</th>
+      <td mat-cell *matCellDef="let element"> {{element.VKORG._text }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="LFUHR ">
+      <th mat-header-cell *matHeaderCellDef> DELIVERY TIME </th>
+      <td mat-cell *matCellDef="let element"> {{element.LFUHR._text }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="LFART">
+      <th mat-header-cell *matHeaderCellDef>DELIVERY TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.LFART._text}} (Outbound delivery) </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ERZET">
+      <th mat-header-cell *matHeaderCellDef>DOC CREATION TIME</th>
+      <td mat-cell *matCellDef="let element"> {{element.ERZET._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ERDAT">
+      <th mat-header-cell *matHeaderCellDef>DOC CREATION DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.ERDAT._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ARKTX">
+      <th mat-header-cell *matHeaderCellDef>DESCRIPTION </th>
+      <td mat-cell *matCellDef="let element"> {{element.ARKTX._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; "  (click)="Ondetail(row)"></tr>
+  </table>
+
+</div>
+
+<app-footerc></app-footerc>

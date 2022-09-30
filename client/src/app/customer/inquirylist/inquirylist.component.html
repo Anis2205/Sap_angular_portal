@@ -1,0 +1,96 @@
+<app-cnav></app-cnav>
+<!-- <div>
+  <table>
+    <tr>
+      <th>VBELN</th>
+      <th>ERNAM</th>
+      <th>ANGDT</th>
+      <th>AUDAT</th>
+      <th>VBTYP</th>
+      <th>WAERK</th>
+      <th>BUKRS_VF</th>
+      <th>BSTNK</th>
+      <th>ERDAT</th>
+      <th>ERZET</th>
+      <th>TRVOG</th>
+    </tr>
+    <tr *ngFor="let listitem of inquirylistarray; let i = index">
+      <td>{{ listitem.VBELN }}</td>
+      <td>{{ listitem.ERNAM }}</td>
+      <td>{{ listitem.ANGDT }}</td>
+      <td>{{ listitem.AUDAT }}</td>
+      <td>{{ listitem.VBTYP }}</td>
+      <td>{{ listitem.WAERK }}</td>
+      <td>{{ listitem.BUKRS_VF }}</td>
+      <td>{{ listitem.BSTNK }}</td>
+      <td>{{ listitem.ERDAT }}</td>
+      <td>{{ listitem.ERZET }}</td>
+      <td>{{ listitem.TRVOG }}</td>
+    </tr>
+  </table>
+</div> -->
+<div class="container" style="display: flex;">
+  <div style="flex:1">
+    <h1>Inquiry Data List </h1>
+  </div>
+  <div style="flex:right">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target)" placeholder="Search By DOC No">
+    </mat-form-field>
+  </div>
+
+</div>
+
+<div class="mytable">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="VBELN">
+      <th mat-header-cell *matHeaderCellDef> DOC NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.VBELN._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ERNAM">
+      <th mat-header-cell *matHeaderCellDef>CREATED BY</th>
+      <td mat-cell *matCellDef="let element"> {{element.ERNAM._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ANGDT">
+      <th mat-header-cell *matHeaderCellDef> QUOTATION VALID FROM </th>
+      <td mat-cell *matCellDef="let element"> {{element.ANGDT._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="AUDAT">
+      <th mat-header-cell *matHeaderCellDef>DOC ITEM DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.AUDAT._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VBTYP">
+      <th mat-header-cell *matHeaderCellDef> DOC CATEGORY </th>
+      <td mat-cell *matCellDef="let element"> {{element.VBTYP._text}} (Inquiry)</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="BUKRS_VF">
+      <th mat-header-cell *matHeaderCellDef> COMPANY CODE </th>
+      <td mat-cell *matCellDef="let element"> {{element.BUKRS_VF._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="WAERK">
+      <th mat-header-cell *matHeaderCellDef>CURRENCY </th>
+      <td mat-cell *matCellDef="let element"> {{element.WAERK._text}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="Ondetail(row)"></tr>
+  </table>
+
+</div>
+
+<app-footerc></app-footerc>

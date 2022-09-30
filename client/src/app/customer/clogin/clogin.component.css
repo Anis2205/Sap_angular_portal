@@ -1,0 +1,47 @@
+.medium-list {
+  width: 100%;
+  padding: 40px;
+  margin:auto;
+  margin-top: 18%;
+}
+.myimg {
+  height: 600 px;
+  color: #fff;background-image: url("../images/login1.png");
+  background-size:60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lcol{
+  background-color: #fafafad4
+}
+mat-toolbar{
+  background-color: #475ac3;
+}
+.btn{
+background-color: #475ac3;
+border-radius: 4px;
+text-align: center;
+color:white;
+font-size: larger;
+width: 100%;
+}
+.col{
+  height: 600px
+}
+h1{
+  font-weight:400
+}
+.help-block{
+  color:red
+}
+.myimg{
+    animation: move 2s linear infinite ;
+    animation-iteration-count:1
+
+  }
+  @keyframes move {
+    0% { transform: translate(-150px); }
+    50% { transform: translate(0px); }
+  }
+
+

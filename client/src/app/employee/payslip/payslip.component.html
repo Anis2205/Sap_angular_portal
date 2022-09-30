@@ -1,0 +1,73 @@
+
+  <!-- <table>
+    <tr>
+      <th>SEQUENCENUMBER</th>
+      <th>FPPERIOD</th>
+      <th>FPBEGIN</th>
+      <th>FPEND</th>
+      <th>BONUSDATE</th>
+      <th>PAYTYPE_TEXT</th>
+      <th>PAYDATE</th>
+    </tr>
+    <tr *ngFor="let listitem of mydata; let i = index">
+      <td>{{ listitem.SEQUENCENUMBER }}</td>
+      <td>{{ listitem.FPPERIOD}}</td>
+      <td>{{ listitem.FPBEGIN }}</td>
+      <td>{{ listitem.FPEND }}</td>
+      <td>{{ listitem.BONUSDATE}}</td>
+      <td>{{ listitem.PAYTYPE_TEXT}}</td>
+      <td>{{ listitem.PAYDATE}}</td>
+    </tr>
+  </table> -->
+
+  <div class="mytable">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+      <ng-container matColumnDef="SEQUENCENUMBER">
+        <th mat-header-cell *matHeaderCellDef> SEQUENCE NO  </th>
+        <td mat-cell *matCellDef="let element"> {{element.SEQUENCENUMBER._text }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FPPERIOD">
+        <th mat-header-cell *matHeaderCellDef>PAYROLL PERIOD </th>
+        <td mat-cell *matCellDef="let element"> {{element.FPPERIOD._text }} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="FPBEGIN">
+        <th mat-header-cell *matHeaderCellDef> PAYROLL BEGIN </th>
+        <td mat-cell *matCellDef="let element"> {{element.FPBEGIN._text }} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="FPEND">
+        <th mat-header-cell *matHeaderCellDef> PAYROLL END</th>
+        <td mat-cell *matCellDef="let element"> {{element.FPEND._text}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="BONUSDATE">
+        <th mat-header-cell *matHeaderCellDef>BONUS DATE</th>
+        <td mat-cell *matCellDef="let element"> {{element.BONUSDATE._text}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="PAYTYPE_TEXT">
+        <th mat-header-cell *matHeaderCellDef> PAYTYPE TEXT </th>
+        <td mat-cell *matCellDef="let element"> {{element.PAYTYPE_TEXT._text}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="PAYDATE">
+        <th mat-header-cell *matHeaderCellDef> PAY DATE </th>
+        <td mat-cell *matCellDef="let element"> {{element.PAYDATE._text}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="Ondetail(row)"></tr>
+    </table>
+
+  </div>
+

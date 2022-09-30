@@ -1,0 +1,83 @@
+<div class="row">
+<div class="container mt-2 mb-3" id="pdfTable" #pdfTable>
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-10">
+          <div class="card">
+              <div class="d-flex flex-row">
+                <h1>INVOICE</h1>
+              </div>
+              <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <h4>   DOC ID : {{invoicedetail?.VBELN?._text}}</h4>
+                      <tbody>
+                          <tr class="add">
+                              <td>To</td>
+                              <td>From</td>
+                          </tr>
+                          <tr class="content">
+                              <td class="font-weight-bold">{{customerprofile?.name}}<br>{{customerprofile?.id}} <br>{{customerprofile?.phone}}</td>
+                              <td class="font-weight-bold">KAAR TECH <br> Chennai <br> INDIA</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="products">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td>Item</td>
+                              <td>Qty</td>
+                              <td>Price</td>
+                              <td class="text-center">Total</td>
+                          </tr>
+                          <tr class="content">
+                              <td>{{invoicedetail?.ARKTX?._text}}</td>
+                              <td>1</td>
+                              <td>${{invoicedetail?.NETWR?._text}}</td>
+                              <td class="text-center">${{invoicedetail?.NETWR?._text}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="products">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td></td>
+                              <td>Subtotal</td>
+                              <td>GST(0%)</td>
+                              <td class="text-center">Total</td>
+                          </tr>
+                          <tr class="content">
+                              <td></td>
+                              <td>${{invoicedetail?.NETWR?._text}}</td>
+                              <td>$0</td>
+                              <td class="text-center">${{invoicedetail?.NETWR?._text}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="address">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td>Bank Details</td>
+                          </tr>
+                          <tr class="content">
+                              <td> Bank Name : ADS BANK <br> Swift Code : 00220022 <br> Account Holder : ANISA <br> Account Number : 6953PO789 <br> </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+    </div>
+     </div>
+     <button class="btn btn-primary" (click)="downloadAsPDF()">Print Invoice</button>
+  </div>
+
+
+

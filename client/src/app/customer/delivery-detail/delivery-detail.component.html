@@ -1,0 +1,24 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <h3>Delivery Details</h3>
+  <ul class="list-group">
+    <li class="list-group-item"> Document ID: {{deliverydetailsdata?.VBELN._text}}</li>
+    <li class="list-group-item"> Client: {{deliverydetailsdata?.MANDT._text}}</li>
+    <li class="list-group-item"> Sales Document Item: {{deliverydetailsdata?.POSNR._text}}</li>
+    <li class="list-group-item"> Item category: {{deliverydetailsdata?.PSTYV._text}}</li>
+    <li class="list-group-item"> Created By: {{deliverydetailsdata?.ERNAM._text}}</li>
+    <li class="list-group-item"> Posted Time: {{deliverydetailsdata?.ERZET._text}}</li>
+    <li class="list-group-item"> Creation Date: {{deliverydetailsdata?.ERDAT._text}}</li>
+    <li class="list-group-item"> Material information: {{deliverydetailsdata?.MATNR._text}}</li>
+    <li class="list-group-item">  Material Entered: {{deliverydetailsdata?.MATWA._text}}</li>
+    <li class="list-group-item"> Plant: {{deliverydetailsdata?.WERKS._text}}</li>
+    <li class="list-group-item"> Base Unit of Measure : {{deliverydetailsdata?.MEINS._text}}</li>
+    <li class="list-group-item"> Division: {{deliverydetailsdata?.SPART._text}}</li>
+    <li class="list-group-item"> Material Type: {{deliverydetailsdata?.MTART._text}}</li>
+    <li class="list-group-item"> Storage Bin: {{deliverydetailsdata?.LGPLA._text}}</li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button></button>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Close</button>
+</div>

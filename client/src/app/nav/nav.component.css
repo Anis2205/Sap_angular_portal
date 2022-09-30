@@ -1,0 +1,7 @@
+.spacer{
+  flex-grow: 1;
+}
+button{
+  font-size: 18px;
+  font-weight: 500;
+}

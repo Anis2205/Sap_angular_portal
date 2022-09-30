@@ -1,0 +1,62 @@
+.row{
+  display:flex;
+  justify-content: center;
+  margin: 40px 40px;
+}
+hr{
+  background-color: #475ac3;
+  font-weight: bolder;
+  height: 2.5px;
+  margin: auto;
+  width: 10%;
+  margin-bottom: 20px;
+}
+h1{
+  text-align: center;
+}
+p{
+  margin: 20px;
+}
+.card{
+  margin: 4px;
+  max-height: 250px;
+  max-width:250px
+}
+.card:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.myimg{
+  height:200px;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 0px 0px 10px 0px;
+}
+.myimg1{
+  background-image: url('../images/inquiry.jfif');
+}
+.myimg2{
+  background-image: url('../images/invoice.jfif');
+}
+.myimg3{
+  background-image: url('../images/delivery.png');
+}
+.myimg4{
+  background-image: url('../images/salesorder.jfif');
+}
+.myimg5{
+  background-image: url('../images/creditmemo.jfif');
+}
+.myimg6{
+  background-image: url('../images/payment.jfif');
+}
+button{
+  background-color: #475ac3a6;
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  margin-top: 12px;
+}

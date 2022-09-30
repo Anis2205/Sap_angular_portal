@@ -1,0 +1,14 @@
+footer {
+  background-color: #475ac3;
+  color: white;
+  padding: 20px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  margin-top: auto;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.dummy{
+  height:100px
+}
+.container{
+  margin-top:5%
+}
+button{
+  cursor: pointer;
+
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+.mytable{
+  height:400px;
+  margin: 40px;
+  overflow:auto;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  background-color: #fafafa;
+  color: #6710f2a3;
+  box-shadow: 0 3px 5px -3px #00000012
+}
+tr.mat-row:hover{
+  background-color: #dddddd;
+}

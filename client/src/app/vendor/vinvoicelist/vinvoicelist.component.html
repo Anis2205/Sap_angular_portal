@@ -1,0 +1,57 @@
+<app-vnav></app-vnav>
+<div class="container">
+  <h1>Invoice Data List </h1>
+</div>
+<div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="INV_DOC_NO">
+      <th mat-header-cell *matHeaderCellDef> INVOICE DOCNO </th>
+      <td mat-cell *matCellDef="let element"> {{element.INV_DOC_NO._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FISC_YEAR">
+      <th mat-header-cell *matHeaderCellDef>FISCAL YEAR</th>
+      <td mat-cell *matCellDef="let element"> {{element.FISC_YEAR._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="PSTNG_DATE">
+      <th mat-header-cell *matHeaderCellDef> POSTING DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.PSTNG_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="DOC_DATE">
+      <th mat-header-cell *matHeaderCellDef>DOC DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ENTRY_DATE">
+      <th mat-header-cell *matHeaderCellDef>ENTRY DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ENTRY_TIME">
+      <th mat-header-cell *matHeaderCellDef>ENTRY TIME</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_TIME._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="GROSS_AMNT">
+      <th mat-header-cell *matHeaderCellDef>GROSS AMOUNT </th>
+      <td mat-cell *matCellDef="let element"> {{element.GROSS_AMNT._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="Ondetail(row)"></tr>
+  </table>
+
+</div>
+<app-vinvoicedetail *ngIf="detailshow"></app-vinvoicedetail>
+
+<app-footerc></app-footerc>

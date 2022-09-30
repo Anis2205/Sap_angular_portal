@@ -1,0 +1,162 @@
+<app-vnav></app-vnav>
+<div class="container">
+  <h1><button mat-button (click)="Oncredit()" [ngStyle]="{'background-color': credit == true ? '#0000ff38' : 'white'}">CREDIT MEMO&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button> |
+    <button mat-button (click)="Ondebit()" [ngStyle]="{'background-color': debit == true ? '#0000ff38' : 'white'}">DEBIT MEMO&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button></h1>
+</div>
+
+<div class="mytable" *ngIf="credit">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+    <ng-container matColumnDef="MANDT">
+      <th mat-header-cell *matHeaderCellDef> CLIENT</th>
+      <td mat-cell *matCellDef="let element"> {{element.MANDT._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BUKRS">
+      <th mat-header-cell *matHeaderCellDef>COMPANY CODE</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUKRS._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BELNR">
+      <th mat-header-cell *matHeaderCellDef>DOC NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.BELNR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="GJAHR">
+      <th mat-header-cell *matHeaderCellDef>FISCAL YEAR</th>
+      <td mat-cell *matCellDef="let element"> {{element.GJAHR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BUZEI">
+      <th mat-header-cell *matHeaderCellDef>LINE ITEM</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUZEI._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BUZID">
+      <th mat-header-cell *matHeaderCellDef>ITEM TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUZID._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BSCHL">
+      <th mat-header-cell *matHeaderCellDef>POSTING KEY</th>
+      <td mat-cell *matCellDef="let element"> {{element.BSCHL._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="KOART">
+      <th mat-header-cell *matHeaderCellDef>PURCHASING DOC</th>
+      <td mat-cell *matCellDef="let element"> {{element.KOART._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="WRBTR">
+      <th mat-header-cell *matHeaderCellDef>AMOUNT </th>
+      <td mat-cell *matCellDef="let element"> {{element.WRBTR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ZUONR">
+      <th mat-header-cell *matHeaderCellDef>ASSIGNED TO </th>
+      <td mat-cell *matCellDef="let element"> {{element.ZUONR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="VORGN">
+      <th mat-header-cell *matHeaderCellDef>TRANSACTION TYPE </th>
+      <td mat-cell *matCellDef="let element"> {{element.VORGN._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="HKONT">
+      <th mat-header-cell *matHeaderCellDef>G/L ACCOUNT </th>
+      <td mat-cell *matCellDef="let element"> {{element.HKONT._text}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+
+<div class="mytable" *ngIf="debit">
+
+  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="MANDT">
+      <th mat-header-cell *matHeaderCellDef> CLIENT </th>
+      <td mat-cell *matCellDef="let element"> {{element.MANDT._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BUKRS">
+      <th mat-header-cell *matHeaderCellDef>COMPANY CODE</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUKRS._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BELNR">
+      <th mat-header-cell *matHeaderCellDef> DOC NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.BELNR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="GJAHR">
+      <th mat-header-cell *matHeaderCellDef>FISCAL YEAR</th>
+      <td mat-cell *matCellDef="let element"> {{element.GJAHR._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="BUZEI">
+      <th mat-header-cell *matHeaderCellDef>LINE ITEM</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUZEI._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="BUZID">
+      <th mat-header-cell *matHeaderCellDef>ITEM TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.BUZID._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BSCHL">
+      <th mat-header-cell *matHeaderCellDef>POSTING KEY</th>
+      <td mat-cell *matCellDef="let element"> {{element.BSCHL._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="WRBTR">
+      <th mat-header-cell *matHeaderCellDef>AMOUNT</th>
+      <td mat-cell *matCellDef="let element"> {{element.WRBTR._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PSWBT">
+      <th mat-header-cell *matHeaderCellDef>UPDATED AMOUNT</th>
+      <td mat-cell *matCellDef="let element"> {{element.PSWBT._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PSWSL">
+      <th mat-header-cell *matHeaderCellDef>UPDATED CURRENCY</th>
+      <td mat-cell *matCellDef="let element"> {{element.PSWSL._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="HKONT">
+      <th mat-header-cell *matHeaderCellDef>G/L ACCOUNT</th>
+      <td mat-cell *matCellDef="let element"> {{element.HKONT._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="EBELN">
+      <th mat-header-cell *matHeaderCellDef>PURCHASING DOC NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.EBELN._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="MENGE">
+      <th mat-header-cell *matHeaderCellDef>QUANTITY</th>
+      <td mat-cell *matCellDef="let element"> {{element.MENGE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="WERKS">
+      <th mat-header-cell *matHeaderCellDef>PLANT/th>
+      <td mat-cell *matCellDef="let element"> {{element.WERKS._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+  </table>
+
+
+</div>
+<!-- <app-invoicedetail *ngIf="detailshow"></app-invoicedetail> -->
+
+<app-footerc></app-footerc>

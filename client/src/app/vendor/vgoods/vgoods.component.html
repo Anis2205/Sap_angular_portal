@@ -1,0 +1,119 @@
+<app-vnav></app-vnav>
+<div class="container">
+  <h1>Goods Receipt </h1>
+</div>
+<div class="mytable" *ngIf="!detailshow">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="MAT_DOC">
+      <th mat-header-cell *matHeaderCellDef> MATERIAL DOC NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.MAT_DOC._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DOC_YEAR">
+      <th mat-header-cell *matHeaderCellDef>DOC YEAR</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_YEAR._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="TR_EV_TYPE">
+      <th mat-header-cell *matHeaderCellDef> TRANSACTION/EVENT TYPE </th>
+      <td mat-cell *matCellDef="let element"> {{element.TR_EV_TYPE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="DOC_DATE">
+      <th mat-header-cell *matHeaderCellDef>DOC DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="PSTNG_DATE">
+      <th mat-header-cell *matHeaderCellDef>POSTING DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.PSTNG_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ENTRY_TIME">
+      <th mat-header-cell *matHeaderCellDef>ENTRY TIME</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_TIME._text}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ENTRY_DATE">
+      <th mat-header-cell *matHeaderCellDef>ENTRY DATE</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="USERNAME">
+      <th mat-header-cell *matHeaderCellDef>USERNAME </th>
+      <td mat-cell *matCellDef="let element"> {{element.USERNAME._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="ondetail(row)"></tr>
+  </table>
+
+</div>
+<div class="mytable" *ngIf="detailshow">
+
+  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="MAT_DOC">
+      <th mat-header-cell *matHeaderCellDef> MAT_DOC </th>
+      <td mat-cell *matCellDef="let element"> {{element.MAT_DOC._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DOC_YEAR">
+      <th mat-header-cell *matHeaderCellDef>DOC_YEAR</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_YEAR._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="MATDOC_ITM">
+      <th mat-header-cell *matHeaderCellDef> MATDOC_ITM </th>
+      <td mat-cell *matCellDef="let element"> {{element.MATDOC_ITM._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="PLANT">
+      <th mat-header-cell *matHeaderCellDef>PLANT</th>
+      <td mat-cell *matCellDef="let element"> {{element.PLANT._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="STGE_LOC">
+      <th mat-header-cell *matHeaderCellDef>STGE_LOC</th>
+      <td mat-cell *matCellDef="let element"> {{element.STGE_LOC._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="MOVE_TYPE">
+      <th mat-header-cell *matHeaderCellDef>MOVE_TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.MOVE_TYPE._text}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ENTRY_QNT">
+      <th mat-header-cell *matHeaderCellDef>ENTRY_QNT</th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_QNT._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ENTRY_UOM">
+      <th mat-header-cell *matHeaderCellDef>ENTRY_UOM </th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_UOM._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1;" (click)="ondetail(row)"></tr>
+  </table>
+  <div class="mybutton">
+    <button type="button" class="btn" (click)="onBack()"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+  </div>
+
+
+</div>
+<!-- <app-invoicedetail *ngIf="detailshow"></app-invoicedetail> -->
+
+<app-footerc></app-footerc>

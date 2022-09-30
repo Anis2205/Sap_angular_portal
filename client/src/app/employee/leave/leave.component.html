@@ -1,0 +1,87 @@
+<!--
+  <table>
+    <tr>
+      <th>EMPLOYEENO</th>
+      <th>SUBTYPE</th>
+      <th>VALIDEND</th>
+      <th>VALIDBEGIN</th>
+      <th>RECORDNR</th>
+      <th>ABSENCETYPE</th>
+      <th>NAMEOFABSENCETYPE</th>
+      <th>ABSENCEDAYS</th>
+      <th>ABSENCEHOURS</th>
+    </tr>
+    <tr *ngFor="let listitem of mydata; let i = index">
+      <td>{{ listitem.EMPLOYEENO }}</td>
+      <td>{{ listitem.SUBTYPE }}</td>
+      <td>{{ listitem.VALIDEND }}</td>
+      <td>{{ listitem.VALIDBEGIN }}</td>
+      <td>{{ listitem.RECORDNR}}</td>
+      <td>{{ listitem.ABSENCETYPE }}</td>
+      <td>{{ listitem.NAMEOFABSENCETYPE}}</td>
+      <td>{{ listitem.ABSENCEDAYS}}</td>
+      <td>{{ listitem.ABSENCEHOURS}}</td>
+    </tr>
+  </table>
+ -->
+
+
+
+ <div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="EMPLOYEENO">
+      <th mat-header-cell *matHeaderCellDef> EMPLOYEE NO  </th>
+      <td mat-cell *matCellDef="let element"> {{element.EMPLOYEENO._text }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="SUBTYPE">
+      <th mat-header-cell *matHeaderCellDef>SUB TYPE </th>
+      <td mat-cell *matCellDef="let element"> {{element.SUBTYPE._text }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VALIDEND">
+      <th mat-header-cell *matHeaderCellDef> VALID END </th>
+      <td mat-cell *matCellDef="let element"> {{element.VALIDEND._text }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VALIDBEGIN">
+      <th mat-header-cell *matHeaderCellDef> VALID BEGIN</th>
+      <td mat-cell *matCellDef="let element"> {{element.VALIDBEGIN._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="RECORDNR">
+      <th mat-header-cell *matHeaderCellDef>RECORD NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.RECORDNR._text}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="ABSENCETYPE">
+      <th mat-header-cell *matHeaderCellDef> ABSENCE TYPE </th>
+      <td mat-cell *matCellDef="let element"> {{element.ABSENCETYPE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ABSENCEDAYS">
+      <th mat-header-cell *matHeaderCellDef> ABSENCE DAYS </th>
+      <td mat-cell *matCellDef="let element"> {{element.ABSENCEDAYS._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="ABSENCEHOURS">
+      <th mat-header-cell *matHeaderCellDef> ABSENCE HOURS </th>
+      <td mat-cell *matCellDef="let element"> {{element.ABSENCEHOURS._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="Ondetail(row)"></tr>
+  </table>
+
+</div>
+
+

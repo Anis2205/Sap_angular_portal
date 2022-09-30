@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<div class="row">
+  <div class="col col-md-6 col-xs-2 myimg">
+  </div>
+  <div class="col col-md-6 col-xs-10 lcol">
+    <div class="medium-list">
+      <div class="list-viewer-wraper">
+
+        <div class="container">
+          <h1>Welcome Back</h1>
+          <p class="help-block" *ngIf = "message != ''">{{message}}</p>
+          <form [formGroup]="loginform" (ngSubmit)="onsubmit()">
+            <div class="form-group">
+              <label for="id">Customer ID:</label>
+              <input type="text" class="form-control" formControlName="id" id="id" placeholder="Enter your ID" [(ngModel)]="id">
+            </div><br>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" formControlName="password" id="pwd" placeholder="**********" [(ngModel)]="password">
+            </div><br>
+            <div >
+              <p style="text-align:left;">
+                <label><p><input type="checkbox"> Remember me</p></label>
+                <span style="float:right;">
+                  Forgot password?
+                </span>
+            </p>
+            </div>
+            <button type="submit" class="btn btn-default" [disabled]="!loginform.valid">Sign in&nbsp;<i class="fa fa-sign-in"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+ </div>
+
+</div>
+
+<app-footerc></app-footerc>

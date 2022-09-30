@@ -1,0 +1,49 @@
+<app-enav></app-enav>
+
+
+  <!-- <button (click)="Onleave()" id="mybtn">LeaveData</button>
+  <button (click)="Onpayslip()" id="mybtn">Payslip</button>
+  <button (click)="Onpayslippdf()" id="mybtn">Payslip Pdf</button> -->
+
+
+
+<div class="sidenav">
+  <a (click)="Onleave()"  ><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Leave Request</a>
+  <hr>
+  <a (click)="Onpayslip()" ><i class="fa fa-money" aria-hidden="true"></i>&nbsp;Payslip</a>
+  <hr>
+  <a  (click)="Onpayslippdf()" ><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;Payslip Pdf</a>
+  <hr>
+</div>
+
+
+<div class="main">
+  <div *ngIf="!leaveshow && !payslippdfshow && !payslipshow">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 mt-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="img-square-wrapper">
+                          <img class="" src="https://img.freepik.com/premium-vector/happy-business-colleagues-team-portrait_179970-1271.jpg" alt="Card image cap">
+                      </div>
+                      <div class="card-body">
+                          <h2 class="card-title">Objective Of Employee Portal</h2>
+                          <p class="card-text">   The objective of the Employee portal is to understand the functionalities of Human Resource
+                            (HR) and Finance (FI) module. This portal is to be designed for providing info about the
+                            organization and employees, getting the pay slip as printable, leave balance and to request
+                            leave.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </div>
+  <app-leave *ngIf="leaveshow"></app-leave>
+  <app-payslip *ngIf="payslipshow"></app-payslip>
+  <app-payslippdf *ngIf="payslippdfshow"></app-payslippdf>
+</div>
+
+<app-footerc></app-footerc>

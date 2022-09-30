@@ -1,0 +1,89 @@
+.sidenav {
+  height: 500px;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  background-color: #fafafa;
+  color: #6710f2a3;
+  box-shadow: 0 3px 5px -3px #00000012;
+
+  overflow-x: hidden;
+  padding-top: 10px;
+  margin-top: 64px;
+}
+
+.sidenav a {
+  padding: 10px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #475ac3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: white;
+  background-color: #475ac3;
+}
+.sidenav a:focus {
+  color: white;
+  background-color: #475ac3;
+}
+
+.main {
+  margin-left: 200px;
+  padding: 10px 10px;
+  min-height: 500px;
+}
+hr {
+  margin: 0rem 0;
+  background-color: none;
+}
+h2 {
+  margin-top: 0;
+}
+
+.card {
+
+  max-width: 100%;
+
+}
+
+.highlight {
+  font-weight: bold;
+  color: #294;
+}
+
+.shadow1 {
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 2px;
+}p{
+  font-size: 16px;
+}
+.card
+{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.card-body{
+  margin-top: 100px;
+}
+.btn-default {
+  color: white;
+  background-color: blue;
+
+}
+
+.btn-change {
+  color: Red;
+  background-color: white;
+}
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}

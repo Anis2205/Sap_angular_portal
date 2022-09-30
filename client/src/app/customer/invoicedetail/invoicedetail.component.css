@@ -1,0 +1,18 @@
+hr{
+  margin: 0px;
+}
+button{
+  width: 200px;
+  margin-bottom: 40px;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+.flex-row {
+  background-color: #475ac3;
+  color:white;
+  justify-content: center;
+  min-height: 40px;
+}

@@ -1,0 +1,9 @@
+<form>
+  <label for="Seqno">Select a Sequence Number :</label>
+  <select name="Seqno" id="Seqno" [(ngModel)]="seqno">
+    <option value="1">0001</option>
+    <option value="2">0002</option>
+  </select><br><p></p>
+  <button type="submit" class="btn btn-default" (click)="onSubmit()" [disabled]="!this.seqno">Send&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+  <button type="submit" class="btn btn-default" (click)="onDownloadpdf()" [disabled]="!this.data">Click to Download&nbsp;<i class="fa fa-download" aria-hidden="true"></i></button>
+</form>

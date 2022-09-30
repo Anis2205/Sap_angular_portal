@@ -1,0 +1,121 @@
+<!-- <app-nav></app-nav>
+<div>
+  <table>
+    <tr>
+      <th>SD_DOC</th>
+      <th>ITM_NUMBER</th>
+      <th>MATERIAL</th>
+      <th>DOC_TYPE</th>
+      <th>DOC_DATE</th>
+      <th>REQ_QTY</th>
+      <th>REQ_DATE</th>
+      <th>PURCH_NO</th>
+      <th>VALID_FROM</th>
+      <th>SOLD_TO</th>
+      <th>EXCHG_RATE</th>
+      <th>NET_PRICE</th>
+      <th>DOC_STATUS</th>
+      <th>CREATION_DATE</th>
+    </tr>
+    <tr *ngFor="let listitem of  salesorderarray; let i = index">
+      <td>{{ listitem.SD_DOC }}</td>
+      <td>{{ listitem.ITM_NUMBER}}</td>
+      <td>{{ listitem.MATERIAL}}</td>
+      <td>{{ listitem.DOC_TYPE}}</td>
+      <td>{{ listitem.DOC_DATE}}</td>
+      <td>{{ listitem.REQ_QTY }}</td>
+      <td>{{ listitem.REQ_DATE}}</td>
+      <td>{{ listitem.PURCH_NO}}</td>
+      <td>{{ listitem.VALID_FROM}}</td>
+      <td>{{ listitem.SOLD_TO }}</td>
+      <td>{{ listitem.EXCHG_RATE}}</td>
+      <td>{{ listitem.NET_PRICE }}</td>
+      <td>{{ listitem.DOC_STATUS }}</td>
+      <td>{{ listitem.CREATION_DATE}}</td>
+    </tr>
+  </table>
+</div> -->
+<app-cnav>
+
+</app-cnav>
+<div class="container" style="display: flex;">
+  <div style="flex:1">
+    <h1>Sales Order Data </h1>
+  </div>
+  <div style="flex:right">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target)" placeholder="Search By DOC No">
+    </mat-form-field>
+  </div>
+
+</div>
+
+<div class="mytable">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" ngDefaultControl>
+
+
+    <ng-container matColumnDef="SD_DOC">
+      <th mat-header-cell *matHeaderCellDef> DOC  NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.SD_DOC._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ITM_NUMBER">
+      <th mat-header-cell *matHeaderCellDef>ITEM NO</th>
+      <td mat-cell *matCellDef="let element"> {{element.ITM_NUMBER._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="MATERIAL">
+      <th mat-header-cell *matHeaderCellDef> MATERIAL</th>
+      <td mat-cell *matCellDef="let element"> {{element.MATERIAL._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="DOC_TYPE">
+      <th mat-header-cell *matHeaderCellDef> DOC TYPE</th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_TYPE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="DOC_DATE">
+      <th mat-header-cell *matHeaderCellDef> DOC DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.DOC_DATE._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="REQ_QTY">
+      <th mat-header-cell *matHeaderCellDef> REQUIRED QTY </th>
+      <td mat-cell *matCellDef="let element"> {{element.REQ_QTY._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="REQ_DATE">
+      <th mat-header-cell *matHeaderCellDef>REQUIRED DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.REQ_DATE._text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PURCH_NO">
+      <th mat-header-cell *matHeaderCellDef> PURCHASE ORDER NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.PURCH_NO._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VALID_FROM">
+      <th mat-header-cell *matHeaderCellDef> VALID FROM </th>
+      <td mat-cell *matCellDef="let element"> {{element.VALID_FROM._text}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="SOLD_TO">
+      <th mat-header-cell *matHeaderCellDef>SOLD TO </th>
+      <td mat-cell *matCellDef="let element"> {{element.SOLD_TO._text}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+<app-footerc></app-footerc>
+
